@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: POD-B
+spec:
+  containers:
+  - name: POD-B
+    image: POD-B:latest
+    ports:
+      - name: tcp
+        protocol: TCP
+        containerPort: 80
+    resources:
+      requests:
+        memory: "200Mi"
+      limits:
+        memory: "200Mi"

@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mediawiki-sample-csv
+data:
+  sample.csv: |
+    name,role
+    ehtesham,admin
+    hassan,user

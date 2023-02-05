@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mediawiki-sample-csv
+spec:
+  containers:
+  - name: mediawiki-sample-csv
+    image: mediawiki:latest
+    ports:
+      - name: tcp
+        protocol: TCP
+        containerPort: 80
+    volumeMounts:
+    - name: mediawiki-sample-csv
+      mountPath: /reports
+    resources:
+      requests:
+        memory: "400Mi"
+      limits:
+        memory: "400Mi"
+  volumes:
+  - name: mediawiki-sample-csv
+    configMap:
+      name: mediawiki-sample-csv
